@@ -69,18 +69,13 @@ function generateCalendar() {
 
 function saveData() {
     const table = document.getElementById('dataTable');
-    const html = table.outerHTML.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    const blob = new Blob(['\ufeff', '<?xml version="1.0"?>\n', '<html xmlns:o="urn:schemas-microsoft-com:office:office"',
-            'xmlns:x="urn:schemas-microsoft-com:office:excel"', 'xmlns="http://www.w3.org/TR/REC-html40">',
-            '<head><meta http-equiv="content-type" content="text/plain; charset=UTF-8"/>',
-            '<xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>',
-            'Calendario de Pagos</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml></head>',
-            '<body>', html, '</body></html>'], { type: 'application/vnd.ms-excel' });
+    const html = table.outerHTML;
+    const blob = new Blob(['\ufeff', html], { type: 'application/vnd.ms-excel' });
 
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Calendario_de_Pagos.xlsx';
+    a.download = 'Calendario_de_Pagos.xls';
     a.click();
     URL.revokeObjectURL(url);
 }
