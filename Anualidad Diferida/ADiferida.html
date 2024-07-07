@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidad Anticipada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Anualidad Anticipada</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Calculadora de Anualidad Anticipada</h2>
+            <form>
+                <label for="anualidad">Anualidad:</label>
+                <input type="number" id="anualidad" required>
+                <br><br>
+                <label for="interes">Tasa de Interés (%):</label>
+                <input type="number" id="interes" required>
+                <br><br>
+                <label for="periodo">Periodo o Plazo:</label>
+                <input type="number" id="periodo" required>
+                <br><br>
+                <label for="frecuencia1">Frecuencia de Pago:</label>
+                <select id="frecuencia1">
+                    <option value="Mensual">Mensual</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
+                </select>
+                <br><br>
+                <label for="frecuencia2">Frecuencia de Cálculo:</label>
+                <select id="frecuencia2">
+                    <option value="Mensual">Mensual</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
+                </select>
+                <br><br>
+                <input type="radio" id="vpresente" name="calculotype" checked>
+                <label for="vpresente">Valor Presente</label>
+                <br>
+                <input type="radio" id="vfuturo" name="calculotype">
+                <label for="vfuturo">Valor Futuro</label>
+                <br><br>
+                <button id="calcular">Calcular</button>
+            </form>
+            <div id="resultado">
+                <p id="lblResult"></p>
+            </div>
+            <table id="tablaResultados">
+                <thead>
+                    <tr>
+                        <th>Anualidad</th>
+                        <th>Tasa de Interés (%)</th>
+                        <th>Periodo o Plazo</th>
+                        <th>Resultado</th>
+                        <th>Tipo de Cálculo</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaBody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

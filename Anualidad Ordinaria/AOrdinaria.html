@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidad Ordinaria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Anualidad Ordinaria</h1>
+
+        <div class="form-group">
+            <label for="txtAnualidad">Anualidad:</label>
+            <input type="number" id="txtAnualidad" step="0.01" />
+        </div>
+
+        <div class="form-group">
+            <label for="txtVPresnte">Valor Presente:</label>
+            <input type="number" id="txtVPresnte" step="0.01" />
+        </div>
+
+        <div class="form-group">
+            <label for="txtInteres">Tasa de Interés (%):</label>
+            <input type="number" id="txtInteres" step="0.01" />
+        </div>
+
+        <div class="form-group">
+            <label for="txtPeriodo">Número de Periodos:</label>
+            <input type="number" id="txtPeriodo" step="0.01" />
+        </div>
+
+        <div class="form-group">
+            <label for="comboBox1">Frecuencia de Tasa de Interés:</label>
+            <select id="comboBox1">
+                <option value="Mensual">Mensual</option>
+                <option value="Trimestral">Trimestral</option>
+                <option value="Semestral">Semestral</option>
+                <option value="Anual">Anual</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="comboBox2">Frecuencia de Periodos:</label>
+            <select id="comboBox2">
+                <option value="Mensual">Mensual</option>
+                <option value="Trimestral">Trimestral</option>
+                <option value="Semestral">Semestral</option>
+                <option value="Anual">Anual</option>
+            </select>
+        </div>
+
+        <div class="form-group radio-buttons">
+            <input type="radio" id="rdbVFuturo" name="calculo" value="VFuturo">
+            <label for="rdbVFuturo">Valor Futuro</label>
+            <input type="radio" id="rbtVpresente" name="calculo" value="Vpresente">
+            <label for="rbtVpresente">Valor Presente</label>
+            <input type="radio" id="rdbAnualdad" name="calculo" value="Anualdad">
+            <label for="rdbAnualdad">Anualidad</label>
+        </div>
+
+        <button id="btnCalcular">Calcular</button>
+
+        <div class="results">
+            <label>Resultado:</label>
+            <input type="text" id="lblResult" readonly />
+        </div>
+
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Tipo de Cálculo</th>
+                    <th>Monto</th>
+                    <th>Tasa de Interés</th>
+                    <th>Número de Periodos</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Resultados se agregarán aquí -->
+            </tbody>
+        </table>
+    </div>
+    <script src="AOrdinaria.js"></script>
+</body>
+</html>

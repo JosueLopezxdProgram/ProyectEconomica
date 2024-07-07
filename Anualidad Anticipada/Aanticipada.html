@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anualidad Anticipada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Anualidad Anticipada</h1>
+        
+        <form id="anualidadForm">
+            <div class="form-group">
+                <label for="txtAnulidad">Anualidad:</label>
+                <input type="number" id="txtAnulidad" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="txtInteres">Tasa de Interés (%):</label>
+                <input type="number" id="txtInteres" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="txtPeriodo">Número de Periodos:</label>
+                <input type="number" id="txtPeriodo" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="comboBox1">Frecuencia de Tasa de Interés:</label>
+                <select id="comboBox1" required>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comboBox2">Frecuencia de Periodos:</label>
+                <select id="comboBox2" required>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Anual">Anual</option>
+                </select>
+            </div>
+
+            <div class="form-group radio-buttons">
+                <label>Tipo de Cálculo:</label>
+                <input type="radio" id="rbtVpresente" name="calculo" value="Vpresente" required>
+                <label for="rbtVpresente">Valor Presente</label>
+                <input type="radio" id="rdbVFuturo" name="calculo" value="VFuturo">
+                <label for="rdbVFuturo">Valor Futuro</label>
+            </div>
+
+            <button id="btnCalcular" type="submit">Calcular</button>
+        </form>
+        
+        <div class="results">
+            <label>Resultado:</label>
+            <input type="text" id="lblResult" readonly />
+        </div>
+
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Anualidad</th>
+                    <th>Tasa de Interés (%)</th>
+                    <th>Periodo o Plazo</th>
+                    <th>Resultado</th>
+                    <th>Tipo de Cálculo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Resultados se agregarán aquí -->
+            </tbody>
+        </table>
+    </div>
+    <script src="Aanticipada.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interés Compuesto</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-left: 4px solid #007BFF;
+        }
+        .info h2 {
+            margin-top: 0;
+        }
+        .images {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .images img {
+            max-width: 45%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo de Interés Compuesto</h1>
+        <form id="interesCompuestoForm">
+            <label for="tipoCalculo">Tipo de Cálculo:</label>
+            <select id="tipoCalculo">
+                <option value="VFuturo">Valor Futuro</option>
+                <option value="VPresente">Valor Presente</option>
+                <option value="Tasa">Tasa de Interés</option>
+                <option value="Periodo">Número de Periodos</option>
+            </select>
+
+            <label for="vPresente">Valor Presente ($):</label>
+            <input type="text" id="vPresente" disabled>
+
+            <label for="vFuturo">Valor Futuro ($):</label>
+            <input type="text" id="vFuturo" disabled>
+
+            <label for="interes">Tasa de Interés (%):</label>
+            <input type="text" id="interes">
+
+            <label for="periodo">Número de Periodos:</label>
+            <input type="text" id="periodo">
+
+            <label for="frecuencia">Frecuencia de Capitalización:</label>
+            <select id="frecuencia">
+                <option value="Diaria">Diaria</option>
+                <option value="Semanal">Semanal</option>
+                <option value="Quincenal">Quincenal</option>
+                <option value="Mensual">Mensual</option>
+                <option value="Bimestral">Bimestral</option>
+                <option value="Trimestral">Trimestral</option>
+                <option value="Cuatrimestral">Cuatrimestral</option>
+                <option value="Semestral">Semestral</option>
+                <option value="Anual">Anual</option>
+            </select>
+
+            <button type="button" id="btnCalcular">Calcular</button>
+        </form>
+
+        <table id="results">
+            <thead>
+                <tr>
+                    <th>Tipo de Cálculo</th>
+                    <th>Valor Futuro ($)</th>
+                    <th>Valor Presente ($)</th>
+                    <th>Tasa de Interés (%)</th>
+                    <th>Número de Periodos</th>
+                    <th>Resultado ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas de resultados -->
+            </tbody>
+        </table>
+
+        <div class="info">
+            <h2>¿Qué es el interés simple?</h2>
+            <p>El interés simple es un cálculo de interés en el que los intereses se acumulan únicamente sobre el capital inicial, sin tener en cuenta los intereses acumulados en períodos anteriores. Es una forma sencilla de calcular el interés generado o pagado en una inversión o préstamo.</p>
+        </div>
+
+    
+            <img src="Periodo.png" alt="Fórmula de Interés Compuesto(Periodo o plazo)">
+            <img src="Futuro.png" alt="Fórmula de Interés Compuesto (Valor Futuro)">
+            <img src="Presente.png" alt="Fórmula de Interés Compuesto (Valor Presente)">
+            <img src="Interes.png" alt="Fórmula de Interés Compuesto (Tasa de Interes)">
+        </div>
+    </div>
+    <script src="ICompuesto.js"></script>
+</body>
+</html>

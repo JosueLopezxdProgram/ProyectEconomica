@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Indicadores Económicos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group, .radio-buttons, .results {
+            margin-bottom: 20px;
+        }
+        .form-group label, .radio-buttons label, .result-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input, .result-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .radio-buttons label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .radio-buttons input {
+            margin-right: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .results {
+            display: flex;
+            justify-content: space-between;
+        }
+        .result-group {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .result-group:last-child {
+            margin-right: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: #fff;
+        }
+        .info {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .info h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo de Indicadores Económicos</h1>
+
+        <div class="info">
+            <h2>¿Qué son los Indicadores Económicos?</h2>
+            <p>Los indicadores económicos son medidas utilizadas para evaluar el rendimiento económico de un proyecto o inversión. Los indicadores más comunes incluyen:</p>
+            <ul>
+                <li><strong>VAN (Valor Actual Neto):</strong> Es la diferencia entre el valor presente de los flujos de caja futuros y la inversión inicial.</li>
+                <li><strong>TIR (Tasa Interna de Retorno):</strong> Es la tasa de descuento que iguala el valor presente de los flujos de caja futuros con la inversión inicial.</li>
+                <li><strong>CAUE (Costo Anual Uniforme Equivalente):</strong> Es el costo anual equivalente de un proyecto, considerando tanto la inversión inicial como los costos operativos.</li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label for="txtFlujoCaja">Flujos de Caja (separados por comas):</label>
+            <input type="text" id="txtFlujoCaja" placeholder="Ej. 1000, 2000, 3000">
+        </div>
+
+        <div class="form-group">
+            <label for="txtTasaDescuento">Tasa de Descuento (%):</label>
+            <input type="text" id="txtTasaDescuento">
+        </div>
+
+        <div class="form-group">
+            <label for="txtVidaUtil">Vida Útil (años):</label>
+            <input type="text" id="txtVidaUtil">
+        </div>
+
+        <div class="radio-buttons">
+            <label><input type="radio" name="calculo" value="tir"> Calcular TIR</label>
+            <label><input type="radio" name="calculo" value="van"> Calcular VAN</label>
+            <label><input type="radio" name="calculo" value="caue"> Calcular CAUE</label>
+        </div>
+
+        <button id="btnCalcular">Calcular</button>
+
+        <div class="results">
+            <div class="result-group">
+                <label for="txtVAN">VAN:</label>
+                <input type="text" id="txtVAN" readonly>
+            </div>
+
+            <div class="result-group">
+                <label for="txtTIR">TIR:</label>
+                <input type="text" id="txtTIR" readonly>
+            </div>
+
+            <div class="result-group">
+                <label for="txtCAUE">CAUE:</label>
+                <input type="text" id="txtCAUE" readonly>
+            </div>
+        </div>
+
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Flujos de Caja</th>
+                    <th>Tasa de Descuento</th>
+                    <th>Vida Útil</th>
+                    <th>VAN</th>
+                    <th>TIR</th>
+                    <th>CAUE</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="IEconomico.js"></script>
+</body>
+</html>

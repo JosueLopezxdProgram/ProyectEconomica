@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Interés Simple</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .radio-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .radio-buttons label {
+            font-weight: bold;
+        }
+        .inputs {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-left: 4px solid #007BFF;
+        }
+        .info h2 {
+            margin-top: 0;
+        }
+        .images {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .images img {
+            max-width: 22%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .images p {
+            text-align: center;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Interés Simple</h1>
+
+        <div class="radio-buttons">
+            <label><input type="radio" name="calculo" value="valorFuturo"> Calcular Valor Futuro</label>
+            <label><input type="radio" name="calculo" value="valorPresente"> Calcular Valor Presente</label>
+            <label><input type="radio" name="calculo" value="interes"> Calcular Tasa de Interés</label>
+            <label><input type="radio" name="calculo" value="periodo"> Calcular Número de Períodos</label>
+        </div>
+
+        <div class="inputs">
+            <label for="txtVPresente">Valor Presente:</label>
+            <input type="text" id="txtVPresente">
+
+            <label for="txtValorFuturo">Valor Futuro:</label>
+            <input type="text" id="txtValorFuturo">
+
+            <label for="txtInteres">Tasa de Interés (%)</label>
+            <input type="text" id="txtInteres">
+
+            <label for="txtPeriodo">Número de Períodos:</label>
+            <input type="text" id="txtPeriodo">
+
+            <button id="btnCalcular">Calcular</button>
+        </div>
+
+        <div class="result">
+            <table id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Tipo de Cálculo</th>
+                        <th>Valor Presente</th>
+                        <th>Valor Futuro</th>
+                        <th>Tasa de Interés</th>
+                        <th>Número de Períodos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <p id="lblResultado"></p>
+        </div>
+
+        <div class="info">
+            <h2>¿Qué es el interés simple?</h2>
+            <p>El interés simple es un cálculo de interés en el que los intereses se acumulan únicamente sobre el capital inicial, sin tener en cuenta los intereses acumulados en períodos anteriores. Es una forma sencilla de calcular el interés generado o pagado en una inversión o préstamo.</p>
+        </div>
+
+        <p>Formulas de Interes Simple.</p>
+            <div>
+                <img src="FIntere.png" alt="Fórmula de Interés Simple">
+    
+            </div>
+            <div>
+                <img src="FPresente.png" alt="Valor Presente">
+                
+            </div>
+            <div>
+                <img src="FFuturo.png" alt="Valor Futuro">
+                
+            </div>
+            <div>
+                <img src="FPlazo.png" alt="Periodo o Plazo">
+    
+            </div>
+        </div>
+    </div>
+
+    <script src="Isimple.js"></script>
+</body>
+</html>

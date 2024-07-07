@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crecimiento Geométrico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Crecimiento Geométrico</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <h2>Ingrese los valores</h2>
+            <form id="input-form">
+                <label for="A1">A1:</label>
+                <input type="number" id="A1" class="input-field" required>
+                <br>
+                <label for="j">j (%):</label>
+                <input type="number" id="j" class="input-field" required>
+                <br>
+                <label for="i">i (%):</label>
+                <input type="number" id="i" class="input-field" required>
+                <br>
+                <label for="n">n:</label>
+                <input type="number" id="n" class="input-field" required>
+                <br>
+                <label for="m">m:</label>
+                <input type="number" id="m" class="input-field" required>
+                <br>
+                <label for="periodicity">Periodicidad:</label>
+                <select id="periodicity" class="select-field">
+                    <option value="Anual">Anual</option>
+                    <option value="Semestral">Semestral</option>
+                    <option value="Trimestral">Trimestral</option>
+                    <option value="Mensual">Mensual</option>
+                </select>
+                <br>
+                <label for="frequency">Frecuencia:</label>
+                <select id="frequency" class="select-field">
+                    <option value="Anualmente">Anualmente</option>
+                    <option value="Semestralmente">Semestralmente</option>
+                    <option value="Trimestralmente">Trimestralmente</option>
+                    <option value="Mensualmente">Mensualmente</option>
+                </select>
+                <br>
+                <fieldset>
+                    <legend>Tipo de Cálculo</legend>
+                    <input type="radio" id="rbPE" name="radio" value="PE">
+                    <label for="rbPE">Presente equivalente</label>
+                    <br>
+                    <input type="radio" id="rbFE" name="radio" value="FE">
+                    <label for="rbFE">Futuro equivalente</label>
+                    <br>
+                    <input type="radio" id="rbAE" name="radio" value="AE">
+                    <label for="rbAE">Anualidad equivalente</label>
+                    <br>
+                    <input type="radio" id="rbI" name="radio" value="Tasa Equivalente">
+                    <label for="rbI">Convertir una tasa equivalente</label>
+                </fieldset>
+                <br>
+                <button type="submit" id="calculate">Calcular</button>
+            </form>
+        </section>
+        <section class="result-section">
+            <h2>Resultado</h2>
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>Fórmula</th>
+                        <th>A1</th>
+                        <th>j (%)</th>
+                        <th>i (%)</th>
+                        <th>n</th>
+                        <th>m</th>
+                        <th>Resultado ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="result-body">
+                </tbody>
+            </table>
+            <p id="result-label"></p>
+        </section>
+    </main>
+    <script src="Cgeometrico.js"></script>
+</body>
+</html>
