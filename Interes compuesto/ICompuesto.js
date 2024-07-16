@@ -1,52 +1,11 @@
-// script.js
-document.getElementById('tipoCalculo').addEventListener('change', function () {
-    const tipoCalculo = this.value;
-    const vPresente = document.getElementById('vPresente');
-    const vFuturo = document.getElementById('vFuturo');
-    const interes = document.getElementById('interes');
-    const periodo = document.getElementById('periodo');
-
-    switch (tipoCalculo) {
-        case 'VFuturo':
-            vPresente.disabled = false;
-            vFuturo.disabled = true;
-            interes.disabled = false;
-            periodo.disabled = false;
-            break;
-        case 'VPresente':
-            vPresente.disabled = true;
-            vFuturo.disabled = false;
-            interes.disabled = false;
-            periodo.disabled = false;
-            break;
-        case 'Tasa':
-            vPresente.disabled = false;
-            vFuturo.disabled = false;
-            interes.disabled = true;
-            periodo.disabled = false;
-            break;
-        case 'Periodo':
-            vPresente.disabled = false;
-            vFuturo.disabled = false;
-            interes.disabled = false;
-            periodo.disabled = true;
-            break;
-        default:
-            vPresente.disabled = true;
-            vFuturo.disabled = true;
-            interes.disabled = true;
-            periodo.disabled = true;
-            break;
-    }
-});
-
 document.getElementById('btnCalcular').addEventListener('click', function () {
     const tipoCalculo = document.getElementById('tipoCalculo').value;
     const vPresente = parseFloat(document.getElementById('vPresente').value);
     const vFuturo = parseFloat(document.getElementById('vFuturo').value);
     let interes = parseFloat(document.getElementById('interes').value);
     let periodo = parseFloat(document.getElementById('periodo').value);
-    const frecuencia = document.getElementById('frecuencia').value;
+    const frecuenciaInteres = document.getElementById('frecuenciaInteres').value;
+    const frecuenciaPeriodo = document.getElementById('frecuenciaPeriodo').value;
 
     if (tipoCalculo !== 'Tasa' && isNaN(interes)) {
         alert("Por favor, ingrese una tasa de interés válida.");
@@ -59,8 +18,8 @@ document.getElementById('btnCalcular').addEventListener('click', function () {
         return;
     }
 
-    interes = ajustarTasaInteres(interes, frecuencia);
-    periodo = ajustarNumPeriodos(periodo, frecuencia);
+    interes = ajustarTasaInteres(interes, frecuenciaInteres);
+    periodo = ajustarNumPeriodos(periodo, frecuenciaPeriodo);
 
     let resultado = 0;
 
@@ -171,4 +130,6 @@ function agregarResultado(tipoCalculo, vPresente, vFuturo, interes, periodo, res
     row.insertCell(3).textContent = (interes * 100).toFixed(2);
     row.insertCell(4).textContent = periodo;
     row.insertCell(5).textContent = resultado.toFixed(2);
+               
 }
+    
